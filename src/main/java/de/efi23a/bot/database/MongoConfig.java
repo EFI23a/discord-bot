@@ -13,7 +13,7 @@ import java.util.Collections;
 /*
 *
 * MongoDB Config
-* Verweis: https://www.baeldung.com/spring-data-mongodb-tutorial
+* https://www.baeldung.com/spring-data-mongodb-tutorial
 *
 * */
 @Configuration
