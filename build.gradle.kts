@@ -31,6 +31,10 @@ dependencies {
     // JUnit 5
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+
+    // MongoDB
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 java {
