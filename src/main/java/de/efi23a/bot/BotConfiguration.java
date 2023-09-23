@@ -17,7 +17,6 @@ public class BotConfiguration {
   JDA jda() throws InterruptedException {
     String token = System.getenv(TOKEN_ENV_VARIABLE);
 
-    // test comment
     return JDABuilder.createDefault(token)
         .build()
         .awaitReady();
