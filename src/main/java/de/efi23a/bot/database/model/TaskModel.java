@@ -22,7 +22,6 @@ public class TaskModel {
   private int importance;
 
   public TaskModel(String title, String description, Date date, int importance) {
-    super();
     this.id = UUID.randomUUID().toString();
     this.title = title;
     this.description = description;
