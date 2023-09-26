@@ -39,6 +39,10 @@ dependencies {
     // RESTful, Web
     implementation("org.springframework.boot:spring-boot-starter-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // Jakarta Mail
+    implementation("jakarta.mail:jakarta.mail-api:2.1.2")
+    implementation("org.eclipse.angus:jakarta.mail:2.0.2")
 }
 
 java {
