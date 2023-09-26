@@ -15,9 +15,12 @@ repositories {
 }
 
 dependencies {
-    // Lombgok
+    // Lombok
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
+
+    // JetBrains Annotations
+    compileOnly("org.jetbrains:annotations:24.0.1")
 
     // Spring
     implementation("org.springframework.boot:spring-boot-starter")

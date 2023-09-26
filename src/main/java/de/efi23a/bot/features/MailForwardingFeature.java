@@ -23,6 +23,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -265,6 +266,7 @@ public class MailForwardingFeature {
     return stringBuilder.toString();
   }
 
+  @ApiStatus.Internal
   private void buildBodyRecursively(Object content, StringBuilder stringBuilder)
       throws MessagingException, IOException {
     if (content instanceof MimeMultipart mimeMultipart) {
