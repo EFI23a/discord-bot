@@ -7,6 +7,9 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+/*
+* Verantwortlich dafür, dass JDA Listener automatisch erkannt und registriert werden.
+* */
 @Component
 @RequiredArgsConstructor
 public class ListenerRegistration {
@@ -16,7 +19,9 @@ public class ListenerRegistration {
 
   @PostConstruct
   public void postConstruct() {
-    context.getBeansOfType(ListenerAdapter.class).forEach((s, listenerAdapter) -> jda.addEventListener(listenerAdapter));
+    context.getBeansOfType(ListenerAdapter.class).forEach(
+        (unused, listenerAdapter) -> jda.addEventListener(listenerAdapter)
+    );
   }
 
 }
