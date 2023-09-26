@@ -14,9 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/*
+/**
 * Kümmert sich ums erstellen und stoppen der JDA und das bereitstellen von Helfer methoden.
-* */
+**/
 @Getter
 @Configuration
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
