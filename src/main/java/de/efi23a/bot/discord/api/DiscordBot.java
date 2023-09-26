@@ -1,6 +1,6 @@
 package de.efi23a.bot.discord.api;
 
-import de.efi23a.bot.discord.api.event.JdaReadyEvent;
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -13,9 +13,8 @@ import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
 
 @Getter
 @Configuration
@@ -27,6 +26,7 @@ public class DiscordBot {
 
   private JDA jda;
 
+  @Bean
   @SneakyThrows
   private JDA buildJda() {
     String botToken = System.getenv(TOKEN_ENV_VARIABLE);
@@ -42,13 +42,6 @@ public class DiscordBot {
             GatewayIntent.DIRECT_MESSAGE_TYPING
         ).enableIntents(GatewayIntent.GUILD_MEMBERS);
     return jdaBuilder.build().awaitReady();
-  }
-
-  @EventListener
-  public void applicationStarted(ContextRefreshedEvent event) {
-    this.jda = this.buildJda();
-    this.applicationEventPublisher.publishEvent(
-        new JdaReadyEvent(jda, event.getApplicationContext()));
   }
 
   @PreDestroy
