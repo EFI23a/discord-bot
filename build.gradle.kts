@@ -25,7 +25,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
 
     // JDA
-    implementation("net.dv8tion:JDA:5.0.0-beta.13")
+    implementation("net.dv8tion:JDA:5.0.0-beta.18")
 
     // Checkstyle
     checkstyle("com.puppycrawl.tools:checkstyle:10.12.3")
